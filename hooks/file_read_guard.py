@@ -19,6 +19,13 @@ import os
 import urllib.request
 import urllib.error
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    from stats_tracker import record_file_intercept as _record
+    _HAS_TRACKER = True
+except ImportError:
+    _HAS_TRACKER = False
+
 OLLAMA_URL = "http://localhost:11434/api/generate"
 OLLAMA_MODEL = "minicpm-v:latest"
 OLLAMA_TIMEOUT = 25  # 초 (큰 파일은 시간 걸림)
@@ -169,6 +176,9 @@ def main():
         original_tokens = len(lines) * 6  # 대략적 추정
         summary_tokens = len(summary) // 4
         saved = original_tokens - summary_tokens
+
+        if _HAS_TRACKER:
+            _record(file_path, original_tokens, summary_tokens)
 
         block_reason = (
             f"[Ollama summarized '{file_path}': {len(lines)} lines → ~{summary_tokens} tokens "

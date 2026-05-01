@@ -13,6 +13,14 @@ threshold:
 """
 import sys
 import json
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    from stats_tracker import record_session_end as _record_session
+    _HAS_TRACKER = True
+except ImportError:
+    _HAS_TRACKER = False
 
 WARN_TURNS = 10
 COMPACT_TURNS = 18
@@ -44,6 +52,10 @@ def main():
 
     human_turns, total_chars = count_transcript(transcript)
     est_tokens = int(total_chars / CHARS_PER_TOKEN)
+
+    if _HAS_TRACKER:
+        session_id = data.get("session_id", data.get("sessionId", ""))
+        _record_session(human_turns, est_tokens, session_id)
 
     result = {}
 

@@ -14,6 +14,14 @@
 """
 import sys
 import json
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    from stats_tracker import record_prompt_turn as _record_turn
+    _HAS_TRACKER = True
+except ImportError:
+    _HAS_TRACKER = False
 
 CONCISE_INSTRUCTION = (
     "EFFICIENCY MODE: "
@@ -39,6 +47,9 @@ def main():
     if not user_msg or user_msg.startswith("/"):
         print(json.dumps({}))
         return
+
+    if _HAS_TRACKER:
+        _record_turn()
 
     print(json.dumps({"systemMessage": CONCISE_INSTRUCTION}))
 
