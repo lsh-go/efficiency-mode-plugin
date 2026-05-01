@@ -1,8 +1,5 @@
 ---
-name: opt
-description: Use this skill when the user types /opt or asks to "optimize this prompt", "compress prompt", or "로컬 LLM으로 프롬프트 최적화". Runs the local Ollama-based prompt optimizer on the given text.
-argument-hint: <prompt text to optimize>
-allowed-tools: [Bash]
+description: Optimize a prompt using local Ollama LLM to reduce tokens and clarify intent.
 ---
 
 The user wants to optimize a prompt using the local Ollama LLM before sending it to Claude.

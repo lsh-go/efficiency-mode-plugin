@@ -1,7 +1,5 @@
 ---
-name: slim
-description: Use this skill when the user types /slim or asks to "slim the context", "세션 정리", "compact now", or "컨텍스트 줄여줘". Guides the user through context compaction for cost reduction.
-allowed-tools: []
+description: Summarize current session and guide to /compact or /clear to reduce context size and save costs.
 ---
 
 The user wants to reduce context size to minimize API costs.
