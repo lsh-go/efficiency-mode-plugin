@@ -19,7 +19,10 @@ CONCISE_INSTRUCTION = (
     "EFFICIENCY MODE: "
     "Respond concisely. No preamble, no restating the question, no trailing summary. "
     "Lead with the answer. Skip explanations unless explicitly asked. "
-    "Use code/lists over prose when appropriate."
+    "Use code/lists over prose when appropriate. "
+    "FILE READING: Use Grep/Glob before Read. "
+    "Always set limit (e.g. limit:100) when using Read. "
+    "Never read full files unless the entire content is explicitly required."
 )
 
 

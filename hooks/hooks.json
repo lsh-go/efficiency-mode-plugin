@@ -1,5 +1,5 @@
 {
-  "description": "efficiency-mode hooks: prompt conciseness injection + session length guard",
+  "description": "efficiency-mode hooks: prompt conciseness injection + session length guard + file read guard",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -7,6 +7,17 @@
           {
             "type": "command",
             "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/prompt_compress.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/file_read_guard.py",
             "timeout": 5
           }
         ]
