@@ -13,7 +13,10 @@
       "author": {
         "name": "lsh-go"
       },
-      "source": ".",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lsh-go/efficiency-mode-plugin.git"
+      },
       "category": "productivity",
       "homepage": "https://github.com/lsh-go/efficiency-mode-plugin"
     }
