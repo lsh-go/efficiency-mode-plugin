@@ -1,0 +1,8 @@
+{
+  "name": "efficiency-mode",
+  "description": "Minimizes Claude Code token usage and API costs. Injects conciseness instructions on every prompt, monitors session length for /compact timing, and provides /opt and /slim commands for manual optimization.",
+  "version": "1.0.0",
+  "author": {
+    "name": "local"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "description": "efficiency-mode hooks: prompt conciseness injection + session length guard",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/ProgramData/Anaconda3/python.exe ${CLAUDE_PLUGIN_ROOT}/hooks/prompt_compress.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/ProgramData/Anaconda3/python.exe ${CLAUDE_PLUGIN_ROOT}/hooks/session_guard.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
