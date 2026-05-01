@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "C:/ProgramData/Anaconda3/python.exe ${CLAUDE_PLUGIN_ROOT}/hooks/prompt_compress.py",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/prompt_compress.py",
             "timeout": 5
           }
         ]
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "C:/ProgramData/Anaconda3/python.exe ${CLAUDE_PLUGIN_ROOT}/hooks/session_guard.py",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/session_guard.py",
             "timeout": 5
           }
         ]

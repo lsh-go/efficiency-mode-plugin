@@ -1,19 +1,20 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "efficiency-mode",
-  "description": "Minimize Claude Code token usage and API costs. Auto-injects conciseness instructions, monitors session length for /compact timing, and provides /opt and /slim commands.",
+  "description": "Minimize Claude Code token usage and API costs",
   "owner": {
-    "name": "local"
+    "name": "lsh-go",
+    "email": "eltoryn8@gmail.com"
   },
   "plugins": [
     {
       "name": "efficiency-mode",
-      "description": "Minimize Claude Code token usage and API costs via hooks and slash commands.",
-      "category": "productivity",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/lsh-go/efficiency-mode-plugin.git"
+      "description": "Minimize Claude Code token usage and API costs. Auto-injects conciseness instructions every turn, monitors session length for /compact timing, and provides /opt and /slim commands.",
+      "author": {
+        "name": "lsh-go"
       },
+      "source": ".",
+      "category": "productivity",
       "homepage": "https://github.com/lsh-go/efficiency-mode-plugin"
     }
   ]
