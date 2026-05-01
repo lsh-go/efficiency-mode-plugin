@@ -12,9 +12,9 @@
       "category": "productivity",
       "source": {
         "source": "url",
-        "url": "https://github.com/YOUR_USERNAME/efficiency-mode-plugin.git"
+        "url": "https://github.com/lsh-go/efficiency-mode-plugin.git"
       },
-      "homepage": "https://github.com/YOUR_USERNAME/efficiency-mode-plugin"
+      "homepage": "https://github.com/lsh-go/efficiency-mode-plugin"
     }
   ]
 }
